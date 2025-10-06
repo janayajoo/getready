@@ -1,0 +1,199 @@
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .showcase-grid {
+        gap: 3rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-cta {
+        padding: 1.2rem 3rem;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    /* Sections */
+    .features,
+    .showcase,
+    .pre-register {
+        padding: 4rem 0;
+    }
+    
+    .impact-section {
+        padding: 3rem 0;
+    }
+    
+    .impact-title {
+        font-size: 2rem;
+    }
+    
+    .impact-text {
+        font-size: 1rem;
+    }
+    
+    /* Showcase Grid */
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1.5rem;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 2rem;
+    }
+    
+    /* Typography */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .showcase-text h2 {
+        font-size: 2rem;
+    }
+    
+    .showcase-text p {
+        font-size: 1rem;
+    }
+    
+    .pr-title {
+        font-size: 2rem;
+    }
+    
+    .pr-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Phone Mockup */
+    .phone-mockup {
+        max-width: 300px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 3rem 0;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    /* Floating Elements */
+    .floating-elements {
+        display: none;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-cta {
+        padding: 1rem 2.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .mobile-menu-links a {
+        font-size: 1.5rem;
+    }
+    
+    .pr-content {
+        padding: 0 1rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 0.8rem;
+    }
+    
+    .pr-submit {
+        padding: 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 4rem;
+    }
+    
+    .showcase-grid,
+    .features-grid {
+        padding: 0 1rem;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1600px) {
+    .hero-title {
+        font-size: 9rem;
+    }
+    
+    .container,
+    .showcase-grid {
+        max-width: 1600px;
+    }
+    
+    .hero-content {
+        max-width: 1400px;
+    }
+    
+    .pr-content {
+        max-width: 700px;
+    }
+    
+    .impact-content {
+        max-width: 900px;
+    }
+}
+
+/* Height Responsive */
+@media (max-height: 700px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 8rem 0;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+}

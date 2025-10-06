@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Ready</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" onclick="toggleMenu()">
+        <div class="mobile-menu-content">
+            <ul class="mobile-menu-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#preregister">Early Access</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-elements">
+            <div class="float-item"></div>
+            <div class="float-item"></div>
+            <div class="float-item"></div>
+            <div class="float-item"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">GET<br>READY</h1>
+            <p class="hero-subtitle">Be You, In Style.</p>
+            <a href="#preregister" class="hero-cta">REQUEST EARLY ACCESS</a>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="impact-content">
+            <h2 class="impact-title">Simplicity meets sophistication</h2>
+            <p class="impact-text">Every morning, millions stare at overflowing closets with nothing to wear. We eliminated the noise, the clutter, the decisions. What remains is pure style intelligence.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">PURE INTELLIGENCE</h2>
+                <p class="section-subtitle">Four pillars of effortless style</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h3 class="feature-title">Visual Recognition</h3>
+                    <p class="feature-description">Photograph your wardrobe. Our AI instantly categorizes, colors, and styles each piece with museum-quality precision.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h3 class="feature-title">Contextual Curation</h3>
+                    <p class="feature-description">Weather. Calendar. Mood. Our algorithms understand context, presenting perfect combinations before you ask.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h3 class="feature-title">Style Evolution</h3>
+                    <p class="feature-description">The more you wear, the more we learn. Your digital stylist grows with your changing aesthetic and lifestyle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">04</div>
+                    <h3 class="feature-title">Sustainable Luxury</h3>
+                    <p class="feature-description">Maximize what you own. Discover forgotten pieces. Reduce fashion waste while elevating your daily presentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-text">
+                    <h2>Elegance in your pocket</h2>
+                    <p>Your entire wardrobe, beautifully organized and intelligently curated. No clutter. No noise. Just perfect outfits, every day.</p>
+                    <a href="#preregister" class="hero-cta">EXPERIENCE THE FUTURE</a>
+                </div>
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="outfit-suggestion">
+                            <div class="outfit-icon"></div>
+                            <div class="outfit-details">
+                                <h4>Today's Selection</h4>
+                                <p>White cotton shirt + Navy trousers</p>
+                            </div>
+                        </div>
+                        <div class="outfit-suggestion">
+                            <div class="outfit-icon"></div>
+                            <div class="outfit-details">
+                                <h4>Alternative Look</h4>
+                                <p>Merino sweater + Dark denim</p>
+                            </div>
+                        </div>
+                        <div class="outfit-suggestion">
+                            <div class="outfit-icon"></div>
+                            <div class="outfit-details">
+                                <h4>Evening Option</h4>
+                                <p>Black blazer + Grey chinos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-registration Section -->
+    <section id="preregister" class="pre-register">
+        <div class="pr-content">
+            <h2 class="pr-title">JOIN THE WAITLIST</h2>
+            <p class="pr-subtitle">Be among the first to experience wardrobe intelligence. Limited access for our founding members.</p>
+            
+            <form class="pr-form" onsubmit="handlePreRegister(event)">
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>STYLE PREFERENCE</label>
+                    <select required>
+                        <option value="">Select your aesthetic</option>
+                        <option value="minimal">Minimal & Clean</option>
+                        <option value="classic">Classic & Timeless</option>
+                        <option value="modern">Modern & Bold</option>
+                        <option value="eclectic">Eclectic & Unique</option>
+                    </select>
+                </div>
+                <button type="submit" class="pr-submit">SECURE EARLY ACCESS</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2025 GET READY. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
