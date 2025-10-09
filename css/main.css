@@ -9,11 +9,11 @@
     --pure-white: #ffffff;
     --off-white: #fafafa;
     --soft-grey: #f5f5f5;
-    --back-grey: #a8a5a7;
+    --back-grey: #c1ff72;
     --medium-grey: #888888;
     --charcoal: #1a1a1a;
     --accent-nude: #e8d5c4;
-    --accent-rose: #c1ff72;
+    --accent-rose: #a8a5a7;
     --shadow-subtle: 0 2px 20px rgba(0, 0, 0, 0.08);
     --shadow-elevated: 0 10px 40px rgba(0, 0, 0, 0.12);
 }
@@ -148,7 +148,7 @@ body {
     display: inline-block;
     padding: 1.5rem 4rem;
     background: var(--back-grey);
-    color: var(--pure-white);
+    color: var(--charcoal);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
