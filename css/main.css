@@ -157,6 +157,8 @@ body {
     animation: fadeInUp 1s ease 0.4s both;
     position: relative;
     overflow: hidden;
+    border-radius: 1rem;
+
 }
 
 .hero-cta::before {
@@ -257,6 +259,8 @@ body {
     font-weight: 300;
     margin-bottom: 2rem;
     letter-spacing: -1px;
+    color: var(--charcoal);
+
 }
 
 .impact-text {
@@ -310,6 +314,8 @@ body {
     box-shadow: var(--shadow-subtle);
     transition: all 0.4s ease;
     border: 1px solid transparent;
+    border-radius: 1rem;
+
 }
 
 .feature-card:hover {
@@ -330,6 +336,7 @@ body {
     font-weight: 400;
     margin-bottom: 1rem;
     letter-spacing: -0.5px;
+    color: var(--charcoal);
 }
 
 .feature-description {
@@ -359,7 +366,7 @@ body {
     font-weight: 300;
     letter-spacing: -1px;
     margin-bottom: 2rem;
-
+    color: var(--charcoal);
 }
 
 .showcase-text p {
@@ -413,6 +420,7 @@ body {
 .outfit-details h4 {
     font-weight: 400;
     margin-bottom: 0.25rem;
+    color: var(--charcoal);
 }
 
 .outfit-details p {
@@ -496,6 +504,8 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 1rem;
+    border-radius: 1rem;
+
 }
 
 .pr-submit:hover {
@@ -508,6 +518,7 @@ footer {
     padding: 4rem 0;
     background: var(--off-white);
     text-align: center;
+    color: var(--charcoal);
 }
 
 .footer-links {
