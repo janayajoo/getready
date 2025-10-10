@@ -245,88 +245,51 @@ body {
     75% { transform: translateY(20px) rotate(3deg); }
 }
 
-/* Impact Section */
-/*.impact-section {
-    min-height: 70vh;
-    background: var(--soft-grey);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+/* NUEVA SECCIÓN DE HÉROE ANIMADO*/
 
-.impact-content {
-    text-align: center;
-    padding: 4rem 2rem;
-    max-width: 800px;
-}
 
-.impact-title {
-    font-size: 3rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    letter-spacing: -1px;
-    color: var(--charcoal);
-
-}
-
-.impact-text {
-    font-size: 1.2rem;
-    color: var(--medium-grey);
-    line-height: 1.8;
-}
-*/
-
-/* ============================================= */
-/* ==   NUEVA SECCIÓN DE HÉROE ANIMADO        == */
-/* ============================================= */
-
-/* A. Estilos de la Nueva Sección (el fondo blanco) */
 .animated-hero {
-    background-color: var(--pure-white); /* Fondo blanco como pediste */
+    background-color: var(--pure-white); 
     min-height: 100vh;
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center;   /* Centra el contenido horizontalmente */
-    overflow: hidden;      /* Oculta las modelos antes de que entren en escena */
+    justify-content: center; 
+    align-items: center;   
+    overflow: hidden;      
 }
 
-/* B. Estilos del Título Animado */
+
 .animated-title {
     color: var(--charcoal);
     font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 700; /* Un poco más grueso para impacto */
+    font-weight: 700; 
     letter-spacing: -2px;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-/* Ocultamos las palabras al inicio para que la animación las muestre */
 .animated-title span {
     display: inline-block;
     opacity: 0;
 }
 
-/* C. Estilos de las Modelos (Layout) */
 .models-container {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Alinea las modelos por la base (los pies) */
-    gap: 1.5rem;           /* Espacio entre cada modelo */
+    align-items: flex-end; 
+    gap: 1.5rem;           
     width: 100%;
 }
 
 .model {
-    max-height: 60vh; /* Controla la altura máxima de las modelos */
-    width: auto;      /* Mantiene la proporción */
+    max-height: 60vh; 
+    width: auto;      
     object-fit: contain;
-    opacity: 0; /* Ocultamos las modelos al inicio */
+    opacity: 0; 
 }
 
-/* D. Las Animaciones (Keyframes) */
+
 @keyframes fadeInText {
     from {
         opacity: 0;
@@ -349,19 +312,14 @@ body {
     }
 }
 
-/* E. Aplicar las Animaciones con Retrasos (La Magia) */
-
-/* El texto aparece primero */
 .word-get {
     animation: fadeInText 0.5s ease forwards;
     animation-delay: 0.2s;
 }
 .word-ready {
     animation: fadeInText 0.5s ease forwards;
-    animation-delay: 0.6s; /* Aparece justo después de "GET" */
+    animation-delay: 0.6s; 
 }
-
-/* Las modelos aparecen una tras otra después del texto */
 .model-1 {
     animation: slideUpModel 0.6s ease forwards;
     animation-delay: 1.0s;
