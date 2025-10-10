@@ -135,8 +135,31 @@
             
             <form class="pr-form" onsubmit="handlePreRegister(event)">
                 <div class="form-group">
+                    <label>NAME</label>
+                    <input type="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>LAST_NAME</label>
+                    <input type="last_name" required placeholder="Your Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <div class="phone-input-container">
+                        <select id="country-code" name="country-code" class="country-code-select">
+                            <option value="+57">🇨🇴 +57</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+52">🇲🇽 +52</option>
+                            <option value="+54">🇦🇷 +54</option>
+                            <option value="+51">🇵🇪 +51</option>
+                        </select>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="300 123 4567" required class="phone-number-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label>EMAIL ADDRESS</label>
-                    <input type="email" required placeholder="your@email.com">
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
                 </div>
                 <div class="form-group">
                     <label>STYLE PREFERENCE</label>

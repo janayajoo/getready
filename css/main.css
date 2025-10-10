@@ -466,6 +466,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: left;
+    
 }
 
 .form-group label {
@@ -484,6 +485,10 @@ body {
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
+}
+.form-group select option {
+    background: var(--charcoal); /* Fondo negro/carbón */
+    color: var(--pure-white);     /* Texto blanco para contraste */
 }
 
 .form-group input:focus,
@@ -512,6 +517,46 @@ body {
     background: var(--pure-white);
     transform: translateY(-2px);
 }
+
+.phone-input-container {
+    display: flex;
+    border-radius: 0; 
+}
+
+.country-code-select,
+.phone-number-input {
+
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.country-code-select {
+    border-radius: 0; 
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.phone-number-input {
+    flex-grow: 1; 
+    border-left: none;
+    border-radius: 0;
+}
+
+
+.phone-input-container:focus-within {
+    box-shadow: 0 0 0 1px var(--accent-rose); 
+}
+
+.phone-input-container:focus-within .country-code-select,
+.phone-input-container:focus-within .phone-number-input {
+    
+    background: rgba(255, 255, 255, 0.15);
+    border-color: transparent;
+}
+
+.phone-input-container:focus-within .phone-number-input {
+    border-left: none;
+}
+
+
 
 /* Footer */
 footer {

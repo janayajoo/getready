@@ -31,36 +31,89 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form submission handler
+
 function handlePreRegister(event) {
     event.preventDefault();
-    
+
+    const name = document.getElementById('name').value;
+    const lastName = document.getElementById('last-name').value;
+    const email = document.getElementById('email').value;
+    const stylePreference = document.getElementById('style-preference').value;
+    const countryCode = document.getElementById('country-code').value;
+    const phoneNumber = document.getElementById('phone-number').value;
+
+    const lettersOnlyRegex = /^[a-zA-Z\sñáéíóúÁÉÍÓÚ]+$/;
+    const numbersOnlyRegex = /^\d+$/;
+    const emailRegex = /^\S+@\S+\.\S+$/;
+
+
+    if (!name || !lastName || !email || !phoneNumber || !stylePreference) {
+        alert('Por favor, completa todos los campos requeridos.');
+        return;
+    }
+
+    if (!lettersOnlyRegex.test(name)) {
+        alert('El nombre solo debe contener letras y espacios.');
+        return;
+    }
+    if (!lettersOnlyRegex.test(lastName)) {
+        alert('El apellido solo debe contener letras y espacios.');
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingresa una dirección de correo electrónico válida.');
+        return;
+    }
+
+    if (!numbersOnlyRegex.test(phoneNumber)) {
+        alert('El número de teléfono solo debe contener dígitos (0-9).');
+        return;
+    }
+
+
+
+
+    const fullPhoneNumber = countryCode + phoneNumber.replace(/\s/g, ''); 
+    const formData = {
+        name: name,
+        lastName: lastName,
+        email: email,
+        phone: fullPhoneNumber,
+        style: stylePreference
+    };
+
+
+    console.log('Datos del formulario capturados:', formData);
+
+
+
     const submitBtn = event.target.querySelector('.pr-submit');
     const originalText = submitBtn.textContent;
     const originalBackground = submitBtn.style.background;
-    
-    // Show loading state
+
     submitBtn.textContent = 'SECURING ACCESS...';
     submitBtn.style.background = 'var(--accent-rose)';
     submitBtn.disabled = true;
     
-    // Simulate API call
     setTimeout(() => {
-        // Show success message
+
         submitBtn.textContent = 'WELCOME TO THE FUTURE';
         
         setTimeout(() => {
             alert('Thank you for joining the waitlist. We\'ll notify you when CLOSET//AI is ready.');
             
-            // Reset form
+
             event.target.reset();
             
-            // Reset button
+
             submitBtn.textContent = originalText;
             submitBtn.style.background = originalBackground;
             submitBtn.disabled = false;
         }, 1500);
     }, 1000);
 }
+
 
 // Close menu when clicking outside
 document.addEventListener('click', function(event) {
@@ -166,6 +219,7 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
 
 // Performance optimization - Lazy load images if any are added later
 const lazyImages = document.querySelectorAll('img[data-src]');
