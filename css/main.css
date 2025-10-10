@@ -246,7 +246,7 @@ body {
 }
 
 /* Impact Section */
-.impact-section {
+/*.impact-section {
     min-height: 70vh;
     background: var(--soft-grey);
     display: flex;
@@ -275,6 +275,112 @@ body {
     font-size: 1.2rem;
     color: var(--medium-grey);
     line-height: 1.8;
+}
+*/
+
+/* ============================================= */
+/* ==   NUEVA SECCIÓN DE HÉROE ANIMADO        == */
+/* ============================================= */
+
+/* A. Estilos de la Nueva Sección (el fondo blanco) */
+.animated-hero {
+    background-color: var(--pure-white); /* Fondo blanco como pediste */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center;   /* Centra el contenido horizontalmente */
+    overflow: hidden;      /* Oculta las modelos antes de que entren en escena */
+}
+
+/* B. Estilos del Título Animado */
+.animated-title {
+    color: var(--charcoal);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700; /* Un poco más grueso para impacto */
+    letter-spacing: -2px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Ocultamos las palabras al inicio para que la animación las muestre */
+.animated-title span {
+    display: inline-block;
+    opacity: 0;
+}
+
+/* C. Estilos de las Modelos (Layout) */
+.models-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinea las modelos por la base (los pies) */
+    gap: 1.5rem;           /* Espacio entre cada modelo */
+    width: 100%;
+}
+
+.model {
+    max-height: 60vh; /* Controla la altura máxima de las modelos */
+    width: auto;      /* Mantiene la proporción */
+    object-fit: contain;
+    opacity: 0; /* Ocultamos las modelos al inicio */
+}
+
+/* D. Las Animaciones (Keyframes) */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpModel {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* E. Aplicar las Animaciones con Retrasos (La Magia) */
+
+/* El texto aparece primero */
+.word-get {
+    animation: fadeInText 0.5s ease forwards;
+    animation-delay: 0.2s;
+}
+.word-ready {
+    animation: fadeInText 0.5s ease forwards;
+    animation-delay: 0.6s; /* Aparece justo después de "GET" */
+}
+
+/* Las modelos aparecen una tras otra después del texto */
+.model-1 {
+    animation: slideUpModel 0.6s ease forwards;
+    animation-delay: 1.0s;
+}
+.model-2 {
+    animation: slideUpModel 0.6s ease forwards;
+    animation-delay: 1.2s;
+}
+.model-3 {
+    animation: slideUpModel 0.6s ease forwards;
+    animation-delay: 1.4s;
+}
+.model-4 {
+    animation: slideUpModel 0.6s ease forwards;
+    animation-delay: 1.6s;
+}
+.model-5 {
+    animation: slideUpModel 0.6s ease forwards;
+    animation-delay: 1.8s;
 }
 
 /* Container */
