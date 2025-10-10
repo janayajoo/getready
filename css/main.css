@@ -181,6 +181,14 @@ body {
     color: var(--charcoal);
     transform: translateY(-2px);
 }
+/* --- Estilo para el nuevo logo en la sección principal --- */
+.hero-logo {
+    width: 90%;                  /* Ocupa el 90% del ancho en pantallas pequeñas */
+    max-width: 450px;            /* Pero no más de 450px en pantallas grandes */
+    height: auto;                /* Mantiene la proporción correcta de la imagen */
+    margin-bottom: 2rem;         /* Espacio inferior, igual que el título anterior */
+    animation: fadeInUp 1s ease; /* Usamos la misma animación de entrada que tenía el texto */
+}
 
 /* Floating Elements */
 .floating-elements {
