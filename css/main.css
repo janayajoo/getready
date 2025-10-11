@@ -110,7 +110,7 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 150vh;
+    min-height: 100vh;
     display: flex;
     align-items: flex-start;
     padding-top: 10vh; 
