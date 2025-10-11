@@ -112,8 +112,7 @@ body {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: flex-start;
-    padding-top: 10vh; 
+    align-items: center;
     justify-content: center;
     position: relative;
     background: var(--charcoal);
