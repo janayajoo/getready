@@ -38,7 +38,7 @@ function handlePreRegister(event) {
     const name = document.getElementById('name').value;
     const lastName = document.getElementById('last-name').value;
     const email = document.getElementById('email').value;
-    const stylePreference = document.getElementById('style-preference').value;
+    const heardUs = document.getElementById('heard-us').value;
     const countryCode = document.getElementById('country-code').value;
     const phoneNumber = document.getElementById('phone-number').value;
 
@@ -47,7 +47,7 @@ function handlePreRegister(event) {
     const emailRegex = /^\S+@\S+\.\S+$/;
 
 
-    if (!name || !lastName || !email || !phoneNumber || !stylePreference) {
+    if (!name || !lastName || !email || !phoneNumber || !heardUs) {
         alert('Por favor, completa todos los campos requeridos.');
         return;
     }
@@ -71,22 +71,34 @@ function handlePreRegister(event) {
         return;
     }
 
-
-
-
     const fullPhoneNumber = countryCode + phoneNumber.replace(/\s/g, ''); 
     const formData = {
         name: name,
-        lastName: lastName,
+        last_name: lastName,
         email: email,
         phone: fullPhoneNumber,
-        style: stylePreference
+        heard_about_us: heardUs
     };
 
+    (async () => {
+        try {
+            const { data, error } = await supabaseClient
+                .from("pre_registrations")
+                .insert([formData]);
+
+            if (error) {
+                console.error("Error al insertar en Supabase:", error);
+                alert("Hubo un problema al enviar tus datos. Intenta nuevamente.");
+                return;
+            }
+
+            console.log("Datos insertados:", data);
+        } catch (err) {
+            console.error("Error de conexión con Supabase:", err);
+        }
+    })();
 
     console.log('Datos del formulario capturados:', formData);
-
-
 
     const submitBtn = event.target.querySelector('.pr-submit');
     const originalText = submitBtn.textContent;
@@ -101,12 +113,10 @@ function handlePreRegister(event) {
         submitBtn.textContent = 'WELCOME TO THE FUTURE';
         
         setTimeout(() => {
-            alert('Thank you for joining the waitlist. We\'ll notify you when CLOSET//AI is ready.');
+            alert('Thank you for joining the waitlist. We\'ll notify you when GET READY is ready.');
             
-
             event.target.reset();
-            
-
+        
             submitBtn.textContent = originalText;
             submitBtn.style.background = originalBackground;
             submitBtn.disabled = false;

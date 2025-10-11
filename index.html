@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 <body>
     <!-- Hamburger Menu -->
@@ -146,11 +149,11 @@
             <form class="pr-form" onsubmit="handlePreRegister(event)">
                 <div class="form-group">
                     <label>NAME</label>
-                    <input type="name" required placeholder="Your Name">
+                    <input id="name" type="name" required placeholder="Your Name">
                 </div>
                 <div class="form-group">
                     <label>LAST_NAME</label>
-                    <input type="last_name" required placeholder="Your Last Name">
+                    <input id="last-name" type="last_name" required placeholder="Your Last Name">
                 </div>
                 <div class="form-group">
                     <label for="phone">Teléfono:</label>
@@ -173,7 +176,7 @@
                 </div>
                 <div class="form-group">
                     <label>STYLE PREFERENCE</label>
-                    <select required>
+                    <select id="heard-us" required>
                         <option value="">Select your aesthetic</option>
                         <option value="minimal">Minimal & Clean</option>
                         <option value="classic">Classic & Timeless</option>
@@ -198,6 +201,7 @@
     </footer>
 
     <!-- JavaScript -->
+     <script src="js/supabase-client.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
