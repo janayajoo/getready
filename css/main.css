@@ -154,6 +154,7 @@ body {
     padding: 6rem 8rem; /* ¡Más espacio a los lados, arriba y abajo! */
     background: var(--charcoal); /* Asegura el fondo negro */
     overflow: hidden; /* Evita barras de desplazamiento si las imágenes son muy grandes */
+    position: relative;
 }
 
 /* Contenedor principal para las dos columnas */
