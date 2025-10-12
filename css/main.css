@@ -108,31 +108,128 @@ body {
     color: var(--accent-rose);
 }
 
-/* Hero Section */
+/* ============================================== */
+/* === ESTILOS MODIFICADOS PARA HERO Y CASCADA === */
+/* ============================================== */
+
+/* Ajustamos el .hero para que sea un contenedor flex */
 .hero {
-    min-height: 100vh;
+    min-height: 100vh; /* Asegura que la sección ocupe al menos toda la altura de la vista */
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    background: var(--charcoal);
-    overflow: hidden;
+    padding: 6rem 8rem; /* ¡Más espacio a los lados, arriba y abajo! */
+    background: var(--charcoal); /* Asegura el fondo negro */
+    overflow: hidden; /* Evita barras de desplazamiento si las imágenes son muy grandes */
 }
 
+/* Contenedor principal para las dos columnas */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px; /* Un poco más de ancho máximo para pantallas grandes */
+    gap: 4rem; /* Más espacio entre el contenido y las imágenes */
+}
+
+/* Ajustamos el contenido de la izquierda */
 .hero-content {
-    text-align: center;
+    flex-basis: 40%; /* Ocupa un poco menos para dar más espacio a las imágenes */
+    text-align: left; /* Alineamos el texto a la izquierda */
     z-index: 2;
-    padding: 0 2rem;
-    max-width: 1200px;
+    padding-right: 2rem; /* Pequeño padding extra si el texto llega muy al borde */
 }
 
-.hero-title {
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 600;
-    letter-spacing: -2px;
-    line-height: 0.9;
+.hero-logo {
+    width: 100%;
+    max-width: 450px; /* El logo puede ser un poco más grande */
     margin-bottom: 2rem;
-    animation: fadeInUp 1s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem; /* Hacemos el subtítulo un poco más grande */
+}
+
+.hero-cta {
+    padding: 1.6rem 4.5rem; /* Botón un poco más grande */
+}
+
+/* Contenedor para la cascada de imágenes de la derecha */
+.hero-image-waterfall {
+    flex-basis: 60%; /* Ocupa más espacio para las imágenes */
+    height: 90vh; /* ¡Ocupa más altura de la vista! */
+    display: flex;
+    gap: 2rem; /* Más espacio entre las columnas de imágenes */
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); /* Efecto de desvanecimiento arriba y abajo */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+/* Cada una de las columnas de imágenes */
+.waterfall-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Más espacio entre las imágenes dentro de una columna */
+    /* Ajusta la duración de la animación aquí para hacerla más rápida */
+    animation: scroll-up 30s linear infinite; /* ¡Más rápido! (antes 60s) */
+}
+
+/* La segunda columna tendrá una velocidad ligeramente diferente */
+/* Esto se maneja en el HTML con style="animation-duration: 80s;" (ajustado a 40s o similar si quieres que ambas sean rápidas) */
+/* Por ejemplo, en el HTML podrías poner: style="animation-duration: 40s;" para que sea más rápida que la primera */
+/* Si no lo cambias en el HTML, la segunda seguirá a 80s, lo cual también genera un buen contraste */
+
+
+/* Estilo para las imágenes dentro de las columnas */
+.waterfall-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación que mueve las imágenes hacia arriba */
+@keyframes scroll-up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%); /* Sigue siendo el 50% para el bucle infinito */
+    }
+}
+
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 4rem 2rem; /* Un poco menos de padding en móviles */
+    }
+    .hero-content {
+        flex-basis: 100%; /* El contenido ocupa todo el ancho */
+        text-align: center; /* Se centra de nuevo */
+        padding-right: 0; /* No padding extra en móviles */
+    }
+    
+    /* Ocultamos la cascada de imágenes en pantallas más pequeñas */
+    .hero-image-waterfall {
+        display: none;
+    }
+}
+
+/* Si el logo es demasiado grande en móvil, ajusta esto */
+@media (max-width: 576px) {
+    .hero-logo {
+        max-width: 300px;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .hero-cta {
+        padding: 1.2rem 3rem;
+        font-size: 0.8rem;
+    }
 }
 
 .hero-subtitle {
@@ -573,7 +670,7 @@ body {
 
 .pr-submit {
     padding: 1.2rem;
-    background: var(--accent-rose);
+    background: var(--back-grey);
     color: var(--charcoal);
     border: none;
     font-size: 0.9rem;
@@ -587,7 +684,7 @@ body {
 }
 
 .pr-submit:hover {
-    background: var(--pure-white);
+    background: var(--back-grey);
     transform: translateY(-2px);
 }
 

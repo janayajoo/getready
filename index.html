@@ -1,90 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Ready</title>
+    <title>Prepárate</title>
     
-    <!-- CSS Files -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 </head>
 <body>
-    <!-- Hamburger Menu -->
     <div class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" onclick="toggleMenu()">
         <div class="mobile-menu-content">
             <ul class="mobile-menu-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#showcase">Showcase</a></li>
-                <li><a href="#preregister">Early Access</a></li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#features">Características</a></li>
+                <li><a href="#showcase">Muestra</a></li>
+                <li><a href="#preregister">Acceso Anticipado</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="floating-elements">
-            <div class="float-item"></div>
-            <div class="float-item"></div>
-            <div class="float-item"></div>
-            <div class="float-item"></div>
-        </div>
+<section id="home" class="hero">
+    <div class="hero-container">
         <div class="hero-content">
-            <img src="images/logo_sin_fondo.webp" alt="Logo de GETREADY" class="hero-logo">
-            <!-- <h1 class="hero-title">GET<br>READY</h1>-->
-            <p class="hero-subtitle" translate="no">Be You, In Style.</p>
-            <a href="#preregister" class="hero-cta">REQUEST EARLY ACCESS</a>
+            <img src="images/logo/logo_sin_fondo.webp" alt="Logo de GETREADY" class="hero-logo">
+            <p class="hero-subtitle" translate="no">Be you, in style.</p>
+            <a href="#preregister" class="hero-cta">SOLICITAR ACCESO ANTICIPADO</a>
         </div>
-    </section>
+
+        <div class="hero-image-waterfall">
+            <div class="waterfall-column">
+                <img src="images/outfits/outfit1.webp" alt="Outfit de ejemplo 1" class="waterfall-image">
+                <img src="images/outfits/outfit2.webp" alt="Outfit de ejemplo 2" class="waterfall-image">
+                <img src="images/outfits/outfit3.webp" alt="Outfit de ejemplo 3" class="waterfall-image">
+                <img src="images/outfits/outfit4.webp" alt="Outfit de ejemplo 4" class="waterfall-image">
+                <img src="images/outfits/outfit5.webp" alt="Outfit de ejemplo 5" class="waterfall-image">
+                <img src="images/outfits/outfit1.webp" alt="Outfit de ejemplo 1" class="waterfall-image">
+                <img src="images/outfits/outfit2.webp" alt="Outfit de ejemplo 2" class="waterfall-image">
+                <img src="images/outfits/outfit3.webp" alt="Outfit de ejemplo 3" class="waterfall-image">
+                <img src="images/outfits/outfit4.webp" alt="Outfit de ejemplo 4" class="waterfall-image">
+                <img src="images/outfits/outfit5.webp" alt="Outfit de ejemplo 5" class="waterfall-image">
+            </div>
+            <div class="waterfall-column" style="animation-duration: 80s;">
+                <img src="images/outfits/outfit6.webp" alt="Outfit de ejemplo 6" class="waterfall-image">
+                <img src="images/outfits/outfit7.webp" alt="Outfit de ejemplo 7" class="waterfall-image">
+                <img src="images/outfits/outfit8.webp" alt="Outfit de ejemplo 8" class="waterfall-image">
+                <img src="images/outfits/outfit9.webp" alt="Outfit de ejemplo 9" class="waterfall-image">
+                <img src="images/outfits/outfit10.webp" alt="Outfit de ejemplo 10" class="waterfall-image">
+                <img src="images/outfits/outfit6.webp" alt="Outfit de ejemplo 6" class="waterfall-image">
+                <img src="images/outfits/outfit7.webp" alt="Outfit de ejemplo 7" class="waterfall-image">
+                <img src="images/outfits/outfit8.webp" alt="Outfit de ejemplo 8" class="waterfall-image">
+                <img src="images/outfits/outfit9.webp" alt="Outfit de ejemplo 9" class="waterfall-image">
+                <img src="images/outfits/outfit10.webp" alt="Outfit de ejemplo 10" class="waterfall-image">
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
-    <!-- Showcase Section -->
     <section id="showcase" class="showcase">
         <div class="container">
             <div class="showcase-grid">
                 <div class="showcase-text">
-                    <h2>Elegance in your pocket</h2>
-                    <p>Your entire wardrobe, beautifully organized and intelligently curated. No clutter. No noise. Just perfect outfits, every day.</p>
-                    <a href="#preregister" class="hero-cta">EXPERIENCE THE FUTURE</a>
+                    <h2>Elegancia en tu bolsillo</h2>
+                    <p>Todo tu armario, bellamente organizado y curado de forma inteligente. Sin desorden. Sin ruido. Solo atuendos perfectos, todos los días.</p>
+                    <a href="#preregister" class="hero-cta">EXPERIMENTA EL FUTURO</a>
                 </div>
                 <div class="phone-mockup">
                     <div class="phone-screen">
                         <div class="outfit-suggestion">
                             <div class="outfit-icon"></div>
                             <div class="outfit-details">
-                                <h4>Today's Selection</h4>
-                                <p>White cotton shirt + Navy trousers</p>
+                                <h4>Selección de Hoy</h4>
+                                <p>Camisa de algodón blanca + Pantalones azul marino</p>
                             </div>
                         </div>
                         <div class="outfit-suggestion">
                             <div class="outfit-icon"></div>
                             <div class="outfit-details">
-                                <h4>Alternative Look</h4>
-                                <p>Merino sweater + Dark denim</p>
+                                <h4>Look Alternativo</h4>
+                                <p>Suéter de merino + Jean oscuro</p>
                             </div>
                         </div>
                         <div class="outfit-suggestion">
                             <div class="outfit-icon"></div>
                             <div class="outfit-details">
-                                <h4>Evening Option</h4>
-                                <p>Black blazer + Grey chinos</p>
+                                <h4>Opción de Noche</h4>
+                                <p>Blazer negro + Chinos grises</p>
                             </div>
                         </div>
                     </div>
@@ -96,39 +109,37 @@
 
 
 
-    <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">PURE INTELLIGENCE</h2>
-                <p class="section-subtitle">Four pillars of effortless style</p>
+                <h2 class="section-title">INTELIGENCIA PURA</h2>
+                <p class="section-subtitle">Cuatro pilares de estilo sin esfuerzo</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-number">01</div>
-                    <h3 class="feature-title">Visual Recognition</h3>
-                    <p class="feature-description">Photograph your wardrobe. Our AI instantly categorizes, colors, and styles each piece with museum-quality precision.</p>
+                    <h3 class="feature-title">Reconocimiento Visual</h3>
+                    <p class="feature-description">Fotografía tu armario. Nuestra IA categoriza, colorea y estiliza instantáneamente cada pieza con precisión de museo.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">02</div>
-                    <h3 class="feature-title">Contextual Curation</h3>
-                    <p class="feature-description">Weather. Calendar. Mood. Our algorithms understand context, presenting perfect combinations before you ask.</p>
+                    <h3 class="feature-title">Curación Contextual</h3>
+                    <p class="feature-description">Clima. Calendario. Estado de ánimo. Nuestros algoritmos entienden el contexto, presentando combinaciones perfectas antes de que las pidas.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">03</div>
-                    <h3 class="feature-title">Style Evolution</h3>
-                    <p class="feature-description">The more you wear, the more we learn. Your digital stylist grows with your changing aesthetic and lifestyle.</p>
+                    <h3 class="feature-title">Evolución de Estilo</h3>
+                    <p class="feature-description">Cuanto más lo usas, más aprendemos. Tu estilista digital crece con tu estética y estilo de vida cambiantes.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-number">04</div>
-                    <h3 class="feature-title">Sustainable Luxury</h3>
-                    <p class="feature-description">Maximize what you own. Discover forgotten pieces. Reduce fashion waste while elevating your daily presentation.</p>
+                    <h3 class="feature-title">Lujo Sostenible</h3>
+                    <p class="feature-description">Maximiza lo que ya tienes. Descubre piezas olvidadas. Reduce el desperdicio de moda mientras elevas tu presentación diaria.</p>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Impact Section -->
 <section id="getready-intro" class="animated-hero">
     <div class="animated-hero-content">
         <h1 class="animated-title">
@@ -136,29 +147,28 @@
             <span class="word-ready" translate="no">READY.</span>
         </h1>
         <div class="models-container">
-            <img src="images/model1.webp" alt="Model in white pants" class="model model-1">
-            <img src="images/model2.webp" alt="Model in blue cardigan" class="model model-2">
-            <img src="images/model3.webp" alt="Model in gray suit" class="model model-3">
-            <img src="images/model4.webp" alt="Model in pink cardigan" class="model model-4">
-            <img src="images/model5.webp" alt="Model in brown shirt" class="model model-5">
+            <img src="images/modelos/model1.webp" alt="Modelo con pantalones blancos" class="model model-1">
+            <img src="images/modelos/model2.webp" alt="Modelo con cárdigan azul" class="model model-2">
+            <img src="images/modelos/model3.webp" alt="Modelo con traje gris" class="model model-3">
+            <img src="images/modelos/model4.webp" alt="Modelo con cárdigan rosa" class="model model-4">
+            <img src="images/modelos/model5.webp" alt="Modelo con camisa marrón" class="model model-5">
         </div>
     </div>
 </section>
 
-    <!-- Pre-registration Section -->
     <section id="preregister" class="pre-register">
         <div class="pr-content">
-            <h2 class="pr-title">JOIN THE WAITLIST</h2>
-            <p class="pr-subtitle">Be among the first to experience wardrobe intelligence. Limited access for our founding members.</p>
+            <h2 class="pr-title">ÚNETE A LA LISTA DE ESPERA</h2>
+            <p class="pr-subtitle">Sé de los primeros en experimentar la inteligencia de armario. Acceso limitado para nuestros miembros fundadores.</p>
             
             <form class="pr-form" onsubmit="handlePreRegister(event)">
                 <div class="form-group">
-                    <label>NAME</label>
-                    <input id="name" type="name" required placeholder="Your Name">
+                    <label>Nombre</label>
+                    <input type="name" required placeholder="Tu Nombre">
                 </div>
                 <div class="form-group">
-                    <label>LAST_NAME</label>
-                    <input id="last-name" type="last_name" required placeholder="Your Last Name">
+                    <label>Apellido</label>
+                    <input type="last_name" required placeholder="Tu Apellido">
                 </div>
                 <div class="form-group">
                     <label for="phone">Teléfono:</label>
@@ -176,37 +186,34 @@
                 </div>
 
                 <div class="form-group">
-                    <label>EMAIL ADDRESS</label>
-                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    <label>Correo</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
                 </div>
                 <div class="form-group">
-                    <label>STYLE PREFERENCE</label>
-                    <select id="heard-us" required>
-                        <option value="">Select your aesthetic</option>
-                        <option value="minimal">Minimal & Clean</option>
-                        <option value="classic">Classic & Timeless</option>
-                        <option value="modern">Modern & Bold</option>
-                        <option value="eclectic">Eclectic & Unique</option>
+                    <label>PREFERENCIA DE ESTILO</label>
+                    <select required>
+                        <option value="">Selecciona tu estética</option>
+                        <option value="minimal">Minimalista y Limpio</option>
+                        <option value="classic">Clásico y Atemporal</option>
+                        <option value="modern">Moderno y Audaz</option>
+                        <option value="eclectic">Ecléctico y Único</option>
                     </select>
                 </div>
-                <button type="submit" class="pr-submit">SECURE EARLY ACCESS</button>
+                <button type="submit" class="pr-submit">ASEGURAR ACCESO ANTICIPADO</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
             <a href="#">Instagram</a>
         </div>
-        <p >&copy; 2025 GET READY. All rights reserved.</p>
+        <p translate="no">&copy; 2025 GET READY. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- JavaScript -->
-     <script src="js/supabase-client.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
