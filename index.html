@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="sticky-logo" class="sticky-logo-container">
+        <img id="sticky-logo-img" src="images/logo/logo_solo_blanco.webp" alt="Logo GetReady Fijo">
+    </div>
+
     <div class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -30,7 +34,7 @@
         </div>
     </div>
 
-<section id="home" class="hero">
+<section id="home" class="hero" data-bg-color="dark">
     <div class="hero-container">
         <div class="hero-content">
             <img src="images/logo/logo_sin_fondo.webp" alt="Logo de GETREADY" class="hero-logo">
@@ -39,7 +43,7 @@
         </div>
 
         <div class="hero-image-waterfall">
-            <div class="waterfall-column">
+            <div class="waterfall-column-up">
                 <img src="images/outfits/outfit1.webp" alt="Outfit de ejemplo 1" class="waterfall-image">
                 <img src="images/outfits/outfit2.webp" alt="Outfit de ejemplo 2" class="waterfall-image">
                 <img src="images/outfits/outfit3.webp" alt="Outfit de ejemplo 3" class="waterfall-image">
@@ -51,7 +55,7 @@
                 <img src="images/outfits/outfit4.webp" alt="Outfit de ejemplo 4" class="waterfall-image">
                 <img src="images/outfits/outfit5.webp" alt="Outfit de ejemplo 5" class="waterfall-image">
             </div>
-            <div class="waterfall-column" style="animation-duration: 80s;">
+            <div class="waterfall-column-down">
                 <img src="images/outfits/outfit6.webp" alt="Outfit de ejemplo 6" class="waterfall-image">
                 <img src="images/outfits/outfit7.webp" alt="Outfit de ejemplo 7" class="waterfall-image">
                 <img src="images/outfits/outfit8.webp" alt="Outfit de ejemplo 8" class="waterfall-image">
@@ -69,7 +73,7 @@
 
 
 
-    <section id="showcase" class="showcase">
+    <section id="showcase" class="showcase" data-bg-color="light">
         <div class="container">
             <div class="showcase-grid">
                 <div class="showcase-text">
@@ -109,7 +113,7 @@
 
 
 
-    <section id="features" class="features">
+    <section id="features" class="features" data-bg-color="dark">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">INTELIGENCIA PURA</h2>
@@ -140,7 +144,7 @@
         </div>
     </section>
 
-<section id="getready-intro" class="animated-hero">
+<section id="getready-intro" class="animated-hero" data-bg-color="light">
     <div class="animated-hero-content">
         <h1 class="animated-title">
             <span class="word-get" translate="no">GET</span>
@@ -156,7 +160,7 @@
     </div>
 </section>
 
-    <section id="preregister" class="pre-register">
+    <section id="preregister" class="pre-register" data-bg-color="dark">
         <div class="pr-content">
             <h2 class="pr-title">ÚNETE A LA LISTA DE ESPERA</h2>
             <p class="pr-subtitle">Sé de los primeros en experimentar la inteligencia de armario. Acceso limitado para nuestros miembros fundadores.</p>

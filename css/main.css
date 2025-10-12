@@ -108,9 +108,42 @@ body {
     color: var(--accent-rose);
 }
 
-/* ============================================== */
-/* === ESTILOS MODIFICADOS PARA HERO Y CASCADA === */
-/* ============================================== */
+/* === ESTILOS PARA EL LOGO FIJO EN LA ESQUINA === */
+
+/* Contenedor del logo fijo (oculto por defecto) */
+.sticky-logo-container {
+    position: fixed;
+    top: 2rem;
+    left: 2rem; /* En el lado opuesto al hamburger */
+    z-index: 1001; /* Debe estar encima de todo, como el hamburger */
+    
+    /* Mismas proporciones que el hamburger menu */
+    width: 30px;
+    height: 20px;
+    
+    /* Estado inicial para la animación (oculto y fuera de la pantalla) */
+    opacity: 0;
+    transform: translateY(-50px);
+    pointer-events: none; /* No se puede hacer clic cuando está oculto */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Estilo cuando el usuario ha hecho scroll */
+.sticky-logo-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Se puede interactuar con él si es necesario */
+}
+
+/* Asegura que la imagen dentro del contenedor se ajuste correctamente */
+#sticky-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción del logo sin deformarlo */
+}
+
+/* ESTILOS MODIFICADOS PARA HERO Y CASCADA  */
+
 
 /* Ajustamos el .hero para que sea un contenedor flex */
 .hero {
@@ -167,7 +200,7 @@ body {
 }
 
 /* Cada una de las columnas de imágenes */
-.waterfall-column {
+.waterfall-column-up {
     display: flex;
     flex-direction: column;
     gap: 2rem; /* Más espacio entre las imágenes dentro de una columna */
@@ -175,11 +208,13 @@ body {
     animation: scroll-up 30s linear infinite; /* ¡Más rápido! (antes 60s) */
 }
 
-/* La segunda columna tendrá una velocidad ligeramente diferente */
-/* Esto se maneja en el HTML con style="animation-duration: 80s;" (ajustado a 40s o similar si quieres que ambas sean rápidas) */
-/* Por ejemplo, en el HTML podrías poner: style="animation-duration: 40s;" para que sea más rápida que la primera */
-/* Si no lo cambias en el HTML, la segunda seguirá a 80s, lo cual también genera un buen contraste */
-
+.waterfall-column-down {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Más espacio entre las imágenes dentro de una columna */
+    /* Ajusta la duración de la animación aquí para hacerla más rápida */
+    animation: scroll-down 30s linear infinite; /* ¡Más rápido! (antes 60s) */
+}
 
 /* Estilo para las imágenes dentro de las columnas */
 .waterfall-image {
@@ -198,6 +233,14 @@ body {
     }
 }
 
+@keyframes scroll-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
 
 /* RESPONSIVE DESIGN */
