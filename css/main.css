@@ -559,6 +559,7 @@ body {
     font-weight: 300;
 }
 
+
 /* Showcase Section */
 .showcase {
     padding: 8rem 0;
@@ -568,7 +569,7 @@ body {
 .showcase-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 6rem; /* Más espacio entre texto e imagen */
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
@@ -576,19 +577,24 @@ body {
 }
 
 .showcase-text h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-size: 3.5rem; /* Título más grande */
+    font-weight: 600;  /* Un poco más de peso */
+    letter-spacing: -1.5px;
     margin-bottom: 2rem;
     color: var(--charcoal);
 }
 
 .showcase-text p {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Texto ligeramente más pequeño para que quepa todo */
     color: var(--medium-grey);
-    line-height: 1.8;
-    margin-bottom: 3rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem; /* Espacio entre párrafos */
 }
+
+.showcase-text .hero-cta {
+    margin-top: 2rem; /* Espacio sobre el botón */
+}
+
 
 /* Phone Mockup */
 .phone-mockup {
@@ -596,50 +602,24 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-}
-
-.phone-screen {
-    aspect-ratio: 9/19.5;
-    background: var(--charcoal);
-    border-radius: 30px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    /* Añadimos un borde simulado al teléfono */
+    border: 10px solid var(--charcoal);
+    border-radius: 40px;
     box-shadow: var(--shadow-elevated);
 }
 
-.outfit-suggestion {
-    background: var(--pure-white);
-    border-radius: 12px;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
+.phone-screen {
+    aspect-ratio: 9 / 19.5;
+    background: #e0e0e0; /* Un fondo mientras carga la imagen */
+    border-radius: 30px; /* Radio interior */
+    overflow: hidden; /* Muy importante para que la imagen se recorte */
 }
 
-.outfit-suggestion:hover {
-    transform: scale(1.02);
-}
-
-.outfit-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--accent-nude);
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-.outfit-details h4 {
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-    color: var(--charcoal);
-}
-
-.outfit-details p {
-    font-size: 0.9rem;
-    color: var(--medium-grey);
+#mockup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    transition: opacity 0.5s ease-in-out; /* Animación de desvanecimiento */
 }
 
 /* Pre-registration Section */

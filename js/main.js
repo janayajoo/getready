@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
@@ -168,6 +169,36 @@ document.addEventListener('DOMContentLoaded', () => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     });
+    // ------------------------------------------------------------------
+    // --- LÓGICA DEL CARRUSEL DE IMÁGENES EN EL MOCKUP ---
+    // ------------------------------------------------------------------
+    const mockupImage = document.getElementById('mockup-image');
+    
+    // Asegúrate de que las rutas a tus imágenes sean correctas
+    const images = [
+        'images/mockups/screen1.webp',
+        'images/mockups/screen2.webp',
+        'images/mockups/screen3.webp'
+    ];
+    let currentImageIndex = 0;
+
+    if (mockupImage) {
+        setInterval(() => {
+            // 1. Incrementa el índice para la siguiente imagen
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            
+            // 2. Aplica el efecto de desvanecimiento de salida
+            mockupImage.style.opacity = 0;
+            
+            // 3. Espera a que termine la animación antes de cambiar la imagen
+            setTimeout(() => {
+                mockupImage.src = images[currentImageIndex];
+                // 4. Vuelve a mostrar la imagen con el efecto de entrada
+                mockupImage.style.opacity = 1;
+            }, 500); // 500ms (coincide con la duración de la transición en CSS)
+
+        }, 5000); // Cambia cada 30 segundos (30000 milisegundos)
+    }
 });
 
 
