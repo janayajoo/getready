@@ -26,6 +26,11 @@ body {
     background: var(--charcoal);
     overflow-x: hidden;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400; /* Anton solo tiene este grosor, es importante definirlo */
+    letter-spacing: 1px; /* Opcional: Anton se ve bien con un poco más de espacio */
+}
 
 /* Hamburger Menu */
 .hamburger {
@@ -549,21 +554,67 @@ body {
     background: var(--charcoal);
 }
 
+/* --- ESTILOS ACTUALIZADOS PARA LAS FEATURE CARDS --- */
+
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    /* Ajustamos el minmax para que sea un poco más flexible en pantallas medianas */
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 3rem;
 }
 
 .feature-card {
     background: var(--pure-white);
-    padding: 3rem;
-    border-radius: 0;
+    /* Convertimos la tarjeta en un contenedor flex */
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 2rem;           /* Espacio entre imagen y texto */
+    padding: 2rem;       /* Ajustamos el padding */
+    border-radius: 1rem;
     box-shadow: var(--shadow-subtle);
     transition: all 0.4s ease;
     border: 1px solid transparent;
-    border-radius: 1rem;
+}
 
+/* Contenedor de la imagen */
+.feature-image {
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    width: 200px;   /* Ancho fijo para la imagen */
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+    border-radius: 0.5rem; /* Bordes redondeados para la imagen */
+}
+
+/* Contenedor del texto */
+.feature-content {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-elevated);
+    border-color: rgba(212, 165, 116, 0.2);
+}
+
+/* --- ESTILOS PARA LA VISTA MÓVIL --- */
+/* Media Query para pantallas de 768px o menos */
+
+@media (max-width: 768px) {
+    .feature-card {
+        /* Cambiamos la dirección del flex a columna */
+        flex-direction: column;
+        text-align: center; /* Centramos el texto */
+    }
+
+    .feature-image {
+        width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+        max-width: 250px; /* Pero no más de 250px para que no sea gigante */
+        margin-bottom: 1.5rem; /* Espacio entre la imagen y el texto */
+    }
 }
 
 .feature-card:hover {
