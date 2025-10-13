@@ -387,6 +387,40 @@ body {
     75% { transform: translateY(20px) rotate(3deg); }
 }
 
+/* ============================================= */
+/* === AJUSTES PARA FONDO ANIMADO EN MÓVIL === */
+/* ============================================= */
+@media (max-width: 768px) {
+    /* Ajustamos las posiciones de los elementos flotantes para que se vean mejor en pantallas verticales */
+
+    .float-item:nth-child(1) {
+        width: 40px;  /* Hacemos los elementos un poco más pequeños */
+        height: 50px;
+        top: 10%;
+        left: 10%; /* Lo movemos un poco */
+    }
+
+    .float-item:nth-child(2) {
+        width: 35px;
+        height: 45px;
+        top: 60%;
+        left: 80%; /* Lo movemos del 'right' al 'left' para mejor control */
+        right: auto;
+    }
+
+    .float-item:nth-child(3) {
+        width: 45px;
+        height: 55px;
+        bottom: 15%;
+        left: 5%; /* Lo movemos más a la izquierda */
+    }
+
+    /* Opcional: Si sientes que 4 elementos son demasiados en móvil, puedes ocultar el último */
+    .float-item:nth-child(4) {
+        display: none; 
+    }
+}
+
 /* NUEVA SECCIÓN DE HÉROE ANIMADO*/
 
 
