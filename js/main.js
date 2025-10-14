@@ -219,30 +219,96 @@ function toggleMenu() {
 function handlePreRegister(event) {
     event.preventDefault();
 
-    // NOTA: Esta función tiene IDs que no existen en tu HTML actual, como 'name', 'last-name', y 'heard-us'.
-    // Asegúrate de que los IDs en tu formulario coincidan o actualiza este código.
-    
-    console.log("Manejando el envío del formulario...");
-    // Ejemplo de cómo obtener un valor que sí existe:
+    const name = document.getElementById('name').value;
+    const lastName = document.getElementById('last-name').value;
     const email = document.getElementById('email').value;
-    console.log("Email:", email);
-    
+    const heardUs = document.getElementById('heard-us').value;
+    const countryCode = document.getElementById('country-code').value;
+    const phoneNumber = document.getElementById('phone-number').value;
+
+    const lettersOnlyRegex = /^[a-zA-Z\sñáéíóúÁÉÍÓÚ]+$/;
+    const numbersOnlyRegex = /^\d+$/;
+    const emailRegex = /^\S+@\S+\.\S+$/;
+
+
+    if (!name || !lastName || !email || !phoneNumber || !heardUs) {
+        alert('Por favor, completa todos los campos requeridos.');
+        return;
+    }
+
+    if (!lettersOnlyRegex.test(name)) {
+        alert('El nombre solo debe contener letras y espacios.');
+        return;
+    }
+    if (!lettersOnlyRegex.test(lastName)) {
+        alert('El apellido solo debe contener letras y espacios.');
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingresa una dirección de correo electrónico válida.');
+        return;
+    }
+
+    if (!numbersOnlyRegex.test(phoneNumber)) {
+        alert('El número de teléfono solo debe contener dígitos (0-9).');
+        return;
+    }
+
+    const fullPhoneNumber = countryCode + phoneNumber.replace(/\s/g, ''); 
+    const formData = {
+        name: name,
+        last_name: lastName,
+        email: email,
+        phone: fullPhoneNumber,
+        heard_about_us: heardUs,
+        email_sent: false
+    };
+
+    (async () => {
+        try {
+            const { data, error } = await supabaseClient
+                .from("pre_registrations")
+                .insert([formData]);
+
+            if (error) {
+                console.error("Error al insertar en Supabase:", error);
+                alert("Hubo un problema al enviar tus datos. Intenta nuevamente.");
+                return;
+            }
+
+            console.log("Datos insertados:", data);
+        } catch (err) {
+            console.error("Error de conexión con Supabase:", err);
+        }
+    })();
+
+    console.log('Datos del formulario capturados:', formData);
+
     const submitBtn = event.target.querySelector('.pr-submit');
     const originalText = submitBtn.textContent;
+    const originalBackground = submitBtn.style.background;
 
-    submitBtn.textContent = 'ASEGURANDO ACCESO...';
+    submitBtn.textContent = 'SECURING ACCESS...';
+    submitBtn.style.background = 'var(--accent-rose)';
     submitBtn.disabled = true;
     
     setTimeout(() => {
-        submitBtn.textContent = 'BIENVENIDO AL FUTURO';
+
+        submitBtn.textContent = 'WELCOME TO THE FUTURE';
+        
         setTimeout(() => {
-            alert('¡Gracias por unirte a la lista de espera! Te notificaremos cuando GET READY esté listo.');
+            alert('Thank you for joining the waitlist. We\'ll notify you when GET READY is ready.');
+            
             event.target.reset();
+        
             submitBtn.textContent = originalText;
+            submitBtn.style.background = originalBackground;
             submitBtn.disabled = false;
         }, 1500);
     }, 1000);
 }
+
 
 // --- Función para el gesto de swipe ---
 function handleSwipe() {
