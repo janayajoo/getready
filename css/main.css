@@ -874,3 +874,10 @@ footer {
         transform: translateY(0);
     }
 }
+
+.logo {
+    width: 150px;           /* Adjust the size of the logo */
+    height: auto;
+    display: block;
+    margin: 20px auto;      /* Centers the logo horizontally */
+}
